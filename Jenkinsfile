@@ -37,7 +37,7 @@ pipeline {
                                    }
                                     steps
                                     {
-                                       sh 'echo "Deployement into Server "'
+                                       sh 'echo "Deployement into Server  "'
                                     }
 
 
