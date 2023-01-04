@@ -12,7 +12,13 @@ pipeline {
                git branch :'master' ,url:'https://github.com/AlKoubra/group6.git'
             }
     }
-
+      stage('Build'){
+                //Run maven on Unix agent
+                steps
+                {
+                   sh 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install'
+                }
+        }
 
          stage('SonarQube Analysis'){
                         //Run maven on Unix agent
