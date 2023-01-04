@@ -29,6 +29,20 @@ pipeline {
 
                         }
                 }
+           stage('Approve Deployement')
+           {
+                                 //Run maven on Unix agent
+                                   input{
+                                     message 'Do you want do proceed for Deployement'
+                                   }
+                                    steps
+                                    {
+                                       sh 'echo "Deployement into Server "'
+                                    }
+
+
+                         }
 
 }
+
 }
