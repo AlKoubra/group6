@@ -20,6 +20,6 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: demo-sir
+      POSTGRES_DB: demo-si
     volumes:
       - ./db-data:/var/lib/postgresql/data
