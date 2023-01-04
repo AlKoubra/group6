@@ -1,0 +1,25 @@
+version: '3.1'
+
+services:
+  app:
+    container_name: demo-sir
+    image: demo-sir
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - dbpostgresql
+
+  dbpostgresql:
+    container_name: demo-sir-db
+    image: postgres:9.6
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: demo-sir
+    volumes:
+      - ./db-data:/var/lib/postgresql/data
