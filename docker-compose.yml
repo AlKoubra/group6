@@ -2,8 +2,8 @@ version: '3.1'
 
 services:
   app:
-    container_name: demo-sir
-    image: demo-sir
+    container_name: formation-demo1
+    image: formation-demo1
     build:
       context: .
       dockerfile: Dockerfile
@@ -13,7 +13,7 @@ services:
       - dbpostgresql
 
   dbpostgresql:
-    container_name: demo-sir-db
+    container_name: formation-demo1
     image: postgres:9.6
     ports:
       - "5432:5432"
