@@ -1,4 +1,4 @@
-package com.ca.formation.formationdemo1.initDb;
+package com.ca.formation.formationdemo1.initdb;
 
 import com.ca.formation.formationdemo1.models.Role;
 import com.ca.formation.formationdemo1.models.Utilisateur;
