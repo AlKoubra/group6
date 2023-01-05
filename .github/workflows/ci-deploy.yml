@@ -32,7 +32,7 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Build Docker image
-      run: docker build -t groupe6 .
+      run: docker build -t group6 .
     - name: Publish to DOcker Hub
       uses: docker/build-push-action@v1
       with:
