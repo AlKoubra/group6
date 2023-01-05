@@ -1,6 +1,6 @@
 #Image de base
 FROM openjdk:18-alpine
-LABEL maintainer="sir@formation.com"
+LABEL maintainer="sir@formationgroup6.com"
 VOLUME /main-app
 ADD target/formation-demo1-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
