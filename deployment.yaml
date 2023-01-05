@@ -1,14 +1,25 @@
+apiVersion: v1 # Kubernetes API version
+kind: Service # Kubernetes resource kind we are creating
+metadata: # Metadata of the resource kind we are creating
+  name: formation-demo1
+spec:
+  selector:
+    app: formation-demo1
+  ports:
+    - protocol: "TCP"
+      port: 8081 # The port that the service is running on in the cluster
+      targetPort: 8081 # The port exposed by the service
+  type: LoadBalancer # type of the service. LoadBalancer indicates that our service will be external.
+---
 apiVersion: apps/v1
-kind: Deployment
+kind: Deployment # Kubernetes resource kind we are creating
 metadata:
   name: formation-demo1
-  labels:
-    app: formation-demo1
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: formation-demo1
+  replicas: 2 # Number of replicas that will be created for this deployment
   template:
     metadata:
       labels:
@@ -16,6 +27,7 @@ spec:
     spec:
       containers:
         - name: formation-demo1
-          image: projetsir2022/groupe6:latest
+          image: projetsir2022/groupe6:latest # Image that will be used to containers in the cluster
+          imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 8080
+            - containerPort: 8081
