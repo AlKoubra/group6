@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-boot-app
+  name: formation-demo1
   labels:
-    app: spring-boot-app
+    app: formation-demo1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: spring-boot-app
+      app: formation-demo1
   template:
     metadata:
       labels:
-        app: spring-boot-app
+        app: formation-demo1
     spec:
       containers:
-        - name: spring-boot-app
-          image: spring-boot-app:latest
+        - name: formation-demo1
+          image: projetsir2022/groupe6:latest
           ports:
             - containerPort: 8080
