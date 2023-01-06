@@ -1,4 +1,4 @@
-#Image de base for Docker
+#Docker Image
 FROM openjdk:18-alpine
 LABEL maintainer="sir@formation.com"
 VOLUME /main-app
