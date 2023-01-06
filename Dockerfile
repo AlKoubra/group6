@@ -1,8 +1,6 @@
-#Image de base for Docker
-FROM openjdk:18-alpine
-LABEL maintainer="sir@formation.com"
-VOLUME /main-app
-ADD target/formation-demo1-0.0.1-SNAPSHOT.jar app.jar
+FROM openjdk:17-jdk-alpine
+ADD target/*.jar appprojet.jar
 EXPOSE 8080
-# java -jar app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java","-jar","/appprojet.jar"]
+VOLUME /main-app
+LABEL key="groupeprojet2022"
