@@ -17,43 +17,43 @@ class SwaggerConfigTest {
     private SwaggerConfig swaggerConfig;
 
     @Test
-    @DisplayName("Should return an openapi object with the correct title")
-    void springShopOpenAPIWhenReturnOpenAPIWithCorrectTitle() {
+    @DisplayName("Doit retourner un objet openapi avec un titre correcte")
+    void springShopCorrectTitle() {
         assertEquals("Formtion API", swaggerConfig.springShopOpenAPI().getInfo().getTitle());
     }
 
     @Test
-    @DisplayName("Should return an openapi object with the correct license url")
-    void springShopOpenAPiWhenReturnOpenApiWithCorrectLicenseUrl() {
+    @DisplayName("Doit retourner un objet openapi avec l'url d'une licence correcte")
+    void springShopCorrectLicenseUrl() {
         assertEquals(
                 "http://springdoc.org",
                 swaggerConfig.springShopOpenAPI().getInfo().getLicense().getUrl());
     }
 
     @Test
-    @DisplayName("Should return an openapi object with the correct description")
-    void springShopOpenAPIWhenReturnOpenAPIWithCorrectDescription() {
+    @DisplayName("Doit retourner un objet openapi avec une description correcte")
+    void springShopCorrectDescription() {
         assertEquals(
                 "Formation sample application",
                 swaggerConfig.springShopOpenAPI().getInfo().getDescription());
     }
 
     @Test
-    @DisplayName("Should return an openapi object with the correct license name")
-    void springShopOpenAPiWhenReturnOpenApiWithCorrectLicenseName() {
+    @DisplayName("Doit retourner un objet openapi avec le nom d'une licence correcte")
+    void springShopCorrectLicenseName() {
         assertEquals(
                 "Apache 2.0", swaggerConfig.springShopOpenAPI().getInfo().getLicense().getName());
     }
 
     @Test
-    @DisplayName("Should return an openapi object with the correct version")
-    void springShopOpenAPIWhenReturnOpenAPIWithCorrectVersion() {
+    @DisplayName("Doit retourner un objet openapi avec une version correct")
+    void springShopCorrectVersion() {
         assertEquals("1.0.0", swaggerConfig.springShopOpenAPI().getInfo().getVersion());
     }
 
     @Test
-    @DisplayName("Should return groupedopenapi")
-    void publicApiShouldReturnGroupedOpenApi() {
+    @DisplayName("SDoit retourner  groupedopenapi")
+    void retournerGroupedOpenApi() {
         assertNotNull(swaggerConfig.publicApi());
     }
 }
