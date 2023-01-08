@@ -22,9 +22,9 @@ public class PersonneRepositoryTest {
 
     @Test
     public void ajouterPersonne() {
-        Personne personne = personneRepository.save(new Personne("fatou", "SOW", 50));
+        Personne personne = personneRepository.save(new Personne("fatous", "SOW", 50));
         assertNotNull(personne);
-        assertEquals(personne.getNom(), "fatou");
+        assertEquals(personne.getNom(), "fatous");
     }
 
     @Test
