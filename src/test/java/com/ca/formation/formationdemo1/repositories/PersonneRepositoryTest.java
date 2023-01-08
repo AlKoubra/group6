@@ -33,7 +33,7 @@ public class PersonneRepositoryTest {
 
         //Given
         Personne personne = personneRepository.save(new Personne("tonux", "samb", 50));
-        personne.setNom("Fatou SOW");
+        personne.setNom("FatouSOW");
         //When
         Personne personneUpdated = personneRepository.save(personne);
         //Then
