@@ -36,13 +36,12 @@ class UtilisateurControllerTest {
 
 
     @Test
-    @DisplayName("Should return a status code of 200 when the user is created")
-    void registrationWhenUserIsCreatedThenReturnStatusCode200() throws javax.xml.bind.ValidationException {
+    void registrationTest() throws javax.xml.bind.ValidationException {
         Utilisateur utilisateur = new Utilisateur();
         utilisateur.setUsername("test");
         utilisateur.setPassword("test");
 
-       // when(utilisateurService.    registration(any(Utilisateur.class))).thenReturn(utilisateur);
+        // when(utilisateurService.    registration(any(Utilisateur.class))).thenReturn(utilisateur);
 
         ResponseEntity<Utilisateur> responseEntity =
                 utilisateurController.registration(utilisateur);
@@ -52,8 +51,8 @@ class UtilisateurControllerTest {
 
 
     @Test
-    @DisplayName("Should return 401 when the credentials are incorrect")
-    void loginWhenCredentialsAreIncorrectThenReturn401() {
+
+    void incorrectIndentifiantLogin() {
         Utilisateur utilisateurRequest = new Utilisateur("admin", "admin");
         when(utilisateurService.login(any(Utilisateur.class)))
                 .thenThrow(new BadCredentialsException("Bad credentials"));
@@ -65,8 +64,8 @@ class UtilisateurControllerTest {
     }
 
     @Test
-    @DisplayName("Should return 200 when the credentials are correct")
-    void loginWhenCredentialsAreCorrectThenReturn200() {
+
+    void correctIndentifiantLogin() {
         Utilisateur utilisateur = new Utilisateur("admin", "admin");
         when(utilisateurService.login(any(Utilisateur.class))).thenReturn(utilisateur);
         when(jwtUtil.generateAccesToken(any(Utilisateur.class))).thenReturn("token");
