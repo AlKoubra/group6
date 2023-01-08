@@ -54,7 +54,7 @@ class JwtUtilTest {
     }
 
     @Test
-    void validateWhenTokenIsExpiredThenReturnFalse() {
+    void validateWhenTokenIsExpired() {
         String token =
                 "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImZvcm1hdGlvbi5jYSIsImlhdCI6MTU4NjY0MjQwMCwiZXhwIjoxNTg2NjQ2MDAwfQ.X-_q-8_7-3_X-_q-8_7-3_X-_q-8_7-3_X-_q-8_7-3_X-_q-8_7-3_X-_q-8_7-3_X-_q-8_7-3";
         assertFalse(jwtUtil.validate(token));
