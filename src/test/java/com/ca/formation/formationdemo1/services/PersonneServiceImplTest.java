@@ -1,4 +1,5 @@
 package com.ca.formation.formationdemo1.services;
+
 import com.ca.formation.formationdemo1.exception.ResourceNotFoundException;
 import com.ca.formation.formationdemo1.models.Personne;
 import com.ca.formation.formationdemo1.models.Utilisateur;
@@ -167,10 +168,10 @@ public class PersonneServiceImplTest {
     when(authenticationManager.authenticate(any())).thenReturn(authenticationMock);
     when(authenticationMock.getPrincipal()).thenReturn(utilisateurMock);
 
-    // Appeler la méthode à tester
+    // Appel de la méthode à tester
     Utilisateur utilisateurResponse = utilisateurServiceImpl.login(utilisateurRequest);
 
-    // Vérifier que la méthode retourne bien l'utilisateur attendu
+    // Vérifions que la méthode retourne bien l'utilisateur attendu
     assertEquals(utilisateurMock, utilisateurResponse);
   }
 
@@ -190,10 +191,10 @@ public class PersonneServiceImplTest {
     String encodedPassword = "encoded_password";
     when(passwordEncoder.encode(password)).thenReturn(encodedPassword);
 
-    // Appeler la méthode à tester
+    // Appel de la méthode à tester
     Utilisateur utilisateurResponse = utilisateurServiceImpl.registration(utilisateurRequest);
 
-    // Vérifier que la méthode retourne bien l'utilisateur attendu
+    // Vérifions que la méthode retourne bien l'utilisateur attendu
     assertEquals(utilisateurMock, utilisateurResponse);
   }
 
