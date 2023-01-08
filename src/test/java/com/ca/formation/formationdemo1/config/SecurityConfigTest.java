@@ -21,13 +21,11 @@ class SecurityConfigTest {
 
 
     @Test
-    @DisplayName("Doit renvoyer un bcryptpasswordencoder")
     void passwordEncoderShouldReturnBCryptPasswordEncoder() {
         assertTrue(securityConfig.passwordEncoder() instanceof BCryptPasswordEncoder);
     }
 
     @Test
-    @DisplayName("Doit authentifier toute autre demande")
     void configureShouldAuthenticateAnyOtherRequest() throws Exception {
         securityConfig.configure(auth);
         verify(auth, times(1)).userDetailsService(any());

@@ -52,7 +52,7 @@ public class PersonneServiceImplTest {
 
   @Test
   public void ajouterPersonne() {
-    Personne personne = new Personne("tonux", "samb", 50);
+    Personne personne = new Personne("serignecheikh", "thioune", 50);
     personne.setId(1L);
     when(personneRepository.save(any())).thenReturn(personne);
 
