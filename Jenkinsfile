@@ -39,15 +39,25 @@ pipeline {
                                     {
                                        sh 'echo "Deployement into Server  "'
                                     }
-                                     steps
-                                     {
-                                        sh 'echo "Deploying into Server group6-dev "'
-                                     }
+
 
 
 
                          }
 
 }
+      post {
+              aborted {
+                  echo "Sending message to Agent"
+              } // aborted
+
+              failure {
+                  echo "Sending message to Agent"
+              } // failure
+
+              success {
+                  echo "Sending message to Agent"
+              } // success
+          } // post
 
 }
