@@ -22,9 +22,9 @@ public class PersonneRepositorytest {
 
   @Test
   public void ajouterPersonne() {
-    Personne personne = personneRepository.save(new Personne("tonux", "samb", 50));
+    Personne personne = personneRepository.save(new Personne("fatou", "SOW", 50));
     assertNotNull(personne);
-    assertEquals(personne.getNom(), "tonux");
+    assertEquals(personne.getNom(), "fatou");
   }
 
   @Test
@@ -33,17 +33,17 @@ public class PersonneRepositorytest {
 
     //Given
     Personne personne = personneRepository.save(new Personne("tonux", "samb", 50));
-    personne.setNom("sowPoulo");
+    personne.setNom("FatouSOW");
     //When
     Personne personneUpdated = personneRepository.save(personne);
     //Then
     assertNotNull(personneUpdated);
-    assertEquals("sowPoulo", personneUpdated.getNom());
+    assertEquals("FatouSOW", personneUpdated.getNom());
   }
 
   @Test
   public void DeleteById() {
-    Personne personne = personneRepository.save(new Personne("tonux", "samb", 50));
+    Personne personne = personneRepository.save(new Personne("Fatou", "SOW", 50));
     personneRepository.delete(personne);
     assertNotNull(personneRepository.findById(personne.getId()));
   }
@@ -51,7 +51,7 @@ public class PersonneRepositorytest {
   @Test
 
   public void findAll() {
-    Personne personne = personneRepository.save(new Personne("tonux", "samb", 50));
+    Personne personne = personneRepository.save(new Personne("Fatou", "SOW", 50));
     personneRepository.findAll();
     assertNotNull(personneRepository.findAll());
 
@@ -59,21 +59,21 @@ public class PersonneRepositorytest {
   @Test
   public void findByNom()
   {
-    Personne personne = personneRepository.save(new Personne("tonux", "samb", 50));
+    Personne personne = personneRepository.save(new Personne("Fatou", "SOW", 50));
     List <Personne> p= personneRepository.findByNom(personne.getNom());
     assertNotNull(p);
   }
   @Test
   public  void findByNomAndPrenom()
   {
-    Personne personne = personneRepository.save(new Personne("tonux", "samb", 50));
+    Personne personne = personneRepository.save(new Personne("fatou", "SOW", 50));
     List<Personne> p=personneRepository.findByNomAndPrenom(personne.getNom(),personne.getPrenom());
     assertNotNull(p);
   }
   @Test
   public  void ageGreaterThan()
   {
-    Personne personne = personneRepository.save(new Personne("tonux", "samb", 50));
+    Personne personne = personneRepository.save(new Personne("fatou", "SOW", 50));
     List<Personne> p=personneRepository.ageGreaterThan(personne.getAge());
     assertNotNull(p);
   }
