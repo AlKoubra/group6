@@ -35,8 +35,8 @@ class JwtFilterTest {
     private JwtFilter jwtFilter;
 
     @Test
-    @DisplayName("Should not set the authentication when the header is null")
-    void doFilterInternalWhenHeaderIsNullThenNotSetAuthentication() {
+
+    void doFilterInternalLorsqueEnteteNull() {
         try {
             jwtFilter.doFilterInternal(request, response, filterChain);
         } catch (ServletException e) {
@@ -48,8 +48,8 @@ class JwtFilterTest {
     }
 
     @Test
-    @DisplayName("Should not set the authentication when the header does not start with bearer")
-    void doFilterInternalWhenHeaderDoesNotStartWithBearerThenNotSetAuthentication() {
+
+    void doFilterInternalLorsqueEnteteNotNull() {
         String header = "Basic";
 
         try {
@@ -65,8 +65,8 @@ class JwtFilterTest {
 
 
     @Test
-    @DisplayName("Should set the authentication when all conditions are met")
-    void doFilterInternalWhenAllConditionsAreMetThenSetAuthentication() {
+
+    void doFilterInternalLorsqueTousLesConditionsSontRemplies() {
         String header =
                 "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzY29wZXMiOlsiUk9MRV9VU0VSIl0sInN1YiI6IkxhY3JvaXgsSmVhbiIsImlzcyI6ImZvcm1hdGlvbi5jYSIsImlhdCI6MTU5MjQ4MjQ2NiwiZXhwIjoxNTkyNTM2MjY2fQ.q-8_7-_Xq-8_7-_Xq-8_7-_Xq-8_7-_Xq-8_7-_Xq-8_7-_Xq-8_7-_Xq-8_7-_Xq-8_7-_Xq-8_7-_Xq-8_7-_X";
         String token =
