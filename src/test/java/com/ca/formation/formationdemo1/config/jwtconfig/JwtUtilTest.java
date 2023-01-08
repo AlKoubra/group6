@@ -18,7 +18,6 @@ class JwtUtilTest {
     private JwtUtil jwtUtil;
 
     @Test
-    @DisplayName("Should return the claims when the token is valid")
     void getClaimsWhenTokenIsValid() {
         Utilisateur utilisateur = new Utilisateur("admin", "admin", "admin", new HashSet<>());
         String token = jwtUtil.generateAccesToken(utilisateur);
@@ -26,16 +25,14 @@ class JwtUtilTest {
     }
 
     @Test
-    @DisplayName("Should throw an exception when the token is invalid")
-    void getClaimsWhenTokenIsInvalidThenThrowException() {
+    void getClaimsWhenTokenIsInvalid() {
         String token =
                 "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlcyI6WyJST0xFX0FETUlOIl0sImlzcyI6ImZvcm1hdGlvbi5jYSIsImlhdCI6MTU4NjQwMzY2NiwiZXhwIjoxNTg2NDkxMDY2fQ.X-_q-7_8-9_0-a_b-c_d-e_f-g_h-i_j-k_l-m_n-o_p-q_r-s_t-u_v-w_x-y_z";
         assertThrows(SignatureException.class, () -> jwtUtil.getClaims(token));
     }
 
     @Test
-    @DisplayName("Should return a token with the expiration date set to 7 days")
-    void refreshAccesTokenShouldReturnATokenWithTheExpirationDateSetTo7Days() {
+    void refreshAccesToken() {
         Utilisateur utilisateur = new Utilisateur("admin", "admin", "admin", new HashSet<>());
         String token = jwtUtil.refreshAccesToken(utilisateur);
         assertNotNull(token);
@@ -43,23 +40,20 @@ class JwtUtilTest {
     }
 
     @Test
-    @DisplayName("Should return a token when the user is valid")
-    void generateAccesTokenWhenUserIsValidThenReturnAToken() {
+    void generateAcces() {
         Utilisateur utilisateur = new Utilisateur("admin", "admin", "admin", new HashSet<>());
         String token = jwtUtil.generateAccesToken(utilisateur);
         assertNotNull(token);
     }
 
     @Test
-    @DisplayName("Should throw an exception when the token is invalid")
-    void getUsernameWhenTokenIsInvalidThenThrowException() {
+    void getUsername() {
         String token =
                 "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNTg2MjYwNjE5LCJleHAiOjE1ODYzNDcwMTl9.q-_7-8Q6_3-XqyvZK8k5Y3x7m6LH4n_2QrZKvRqXsQt0uWYy7D5k6-9g3BHp8l2e_4nPfTmCxrLcRtXoZKPWcA";
         assertThrows(SignatureException.class, () -> jwtUtil.getUsername(token));
     }
 
     @Test
-    @DisplayName("Should return false when the token is expired")
     void validateWhenTokenIsExpiredThenReturnFalse() {
         String token =
                 "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImZvcm1hdGlvbi5jYSIsImlhdCI6MTU4NjY0MjQwMCwiZXhwIjoxNTg2NjQ2MDAwfQ.X-_q-8_7-3_X-_q-8_7-3_X-_q-8_7-3_X-_q-8_7-3_X-_q-8_7-3_X-_q-8_7-3_X-_q-8_7-3";
