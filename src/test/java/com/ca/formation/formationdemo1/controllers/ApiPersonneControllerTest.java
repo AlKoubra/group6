@@ -86,7 +86,7 @@ class ApiPersonneControllerTest {
     @WithMockUser(username = "michel@formation.sn", password = "Passer@123", authorities = { "ADMIN" })
     public void addPersonne() throws Exception {
 
-        Personne personne = new Personne("Ndéye Khady", "Niang", 40);
+        Personne personne = new Personne("NdéyeKhady", "Niang", 40);
         HttpHeaders headers = new HttpHeaders();
         headers.add(HttpHeaders.AUTHORIZATION, "Bearer " + tokenRequest);
         HttpEntity<Personne> entity = new HttpEntity<Personne>(null, headers);
