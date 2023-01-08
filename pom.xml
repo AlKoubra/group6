@@ -128,7 +128,7 @@
             </properties>
         </profile>
     </profiles>
-    <!-- Profile ends for Sonar -->
+    <!-- Profile ends for Sonar  -->
 
     <build>
         <plugins>
