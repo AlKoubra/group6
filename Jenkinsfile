@@ -43,10 +43,7 @@ pipeline {
                                      {
                                         sh 'echo "Deploying into Server group6-dev "'
                                      }
-                                        steps
-                                                                          {
-                                                                             sh 'echo "Deploying into Server group6-dev "'
-                                                                          }
+
 
 
                          }
