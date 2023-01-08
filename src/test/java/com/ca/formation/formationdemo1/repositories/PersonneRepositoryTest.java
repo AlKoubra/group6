@@ -33,12 +33,12 @@ public class PersonneRepositoryTest {
 
         //Given
         Personne personne = personneRepository.save(new Personne("tonux", "samb", 50));
-        personne.setNom("FatouSOW");
+        personne.setNom("Fatou SOW");
         //When
         Personne personneUpdated = personneRepository.save(personne);
         //Then
         assertNotNull(personneUpdated);
-        assertEquals("FatouS OW", personneUpdated.getNom());
+        assertEquals("Fatou SOW", personneUpdated.getNom());
     }
 
     @Test
